@@ -1,0 +1,42 @@
+.search {
+    width: 100%;
+}
+
+form {
+    display: flex;
+}
+
+.input {
+    height: 100%;
+    width: calc(80% - 20px - 60px);
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    font-family: 'Roboto', sans-serif;
+    margin-right: 10%;
+    margin-left: auto;
+    margin-top: auto;
+    color: white;
+    font-size: 18px;
+}
+
+input::placeholder {
+    color: white;
+}
+
+button {
+    border: none;
+    padding: 0;
+    width: auto;
+    height: auto;
+}
+
+button img {
+    width: 20px;
+    /* height: 40px; */
+    background: #d46b05;
+    margin: 0;
+    padding: 30px;
+    display: flex;
+}

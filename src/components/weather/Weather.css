@@ -1,0 +1,27 @@
+.weather__situation {
+    display: flex;
+    justify-content: space-between;
+    max-width: 60%;
+    width: 30%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.cityName {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.date {
+    margin: 0;
+}
+
+.degree {
+    font-size: 100px;
+    margin: 0;
+    margin-right: 10px;
+}
+
+.center {
+    margin: auto 0;
+}

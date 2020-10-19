@@ -1,0 +1,25 @@
+.weather__details {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    width: 90%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: auto;
+}
+
+.tableDiv {
+    height: 50%;
+    font-weight: 900;
+}
+
+table {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    /* margin-left: 10%; */
+}

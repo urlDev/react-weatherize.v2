@@ -1,0 +1,7 @@
+const weatherActionTypes = {
+  FETCH_WEATHER_BEGIN: 'FETCH_WEATHER_BEGIN',
+  FETCH_WEATHER_SUCCESS: 'FETCH_WEATHER_SUCCESS',
+  FETCH_WEATHER_ERROR: 'FETCH_WEATHER_ERROR',
+};
+
+export default weatherActionTypes;
