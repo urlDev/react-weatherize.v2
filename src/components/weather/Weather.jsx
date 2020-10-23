@@ -11,7 +11,7 @@ const Weather = () => {
     <div className="weather__situation">
       <div className="center">
         <h1 className="degree">
-          {weather.main && weather.main.temp.toString().slice(0, 2)}°
+          {weather.main && parseInt(weather.main.temp, 10)}°
         </h1>
       </div>
       <div className="center">

@@ -1,11 +1,18 @@
 import { combineReducers } from 'redux';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 import weatherReducer from './weather/weatherReducer';
-import imageReducer from './image/imageReducer';
+
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['weather'],
+};
 
 const rootReducer = combineReducers({
   weather: weatherReducer,
-  image: imageReducer,
 });
 
-export default rootReducer;
+export default persistReducer(persistConfig, rootReducer);
+// export default rootReducer;

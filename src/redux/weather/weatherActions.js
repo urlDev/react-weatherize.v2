@@ -12,6 +12,11 @@ export const fetchWeatherError = (error) => ({
   payload: { error },
 });
 
+// export const saveLocalStorage = (storage) => ({
+//   type: 'SAVE_LOCAL_STORAGE',
+//   payload: { storage },
+// });
+
 export const fetchWeather = (input = 'Helsinki') => async (dispatch) => {
   dispatch(fetchWeatherBegin());
   try {
@@ -20,6 +25,7 @@ export const fetchWeather = (input = 'Helsinki') => async (dispatch) => {
     );
     const data = await response.json();
     dispatch(fetchWeatherSuccess(data));
+    // dispatch(saveLocalStorage(data));
     return data;
   } catch (error) {
     return dispatch(fetchWeatherError(error));

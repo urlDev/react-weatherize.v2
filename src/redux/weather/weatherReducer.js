@@ -1,9 +1,12 @@
 import weatherActionTypes from './weatherActionTypes';
 
+import prevSearchedCities from './weatherUtils';
+
 const initialState = {
   loading: false,
   weather: [],
   error: null,
+  storage: [],
 };
 
 const weatherReducer = (state = initialState, action) => {
@@ -18,6 +21,7 @@ const weatherReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         weather: action.payload.weather,
+        storage: prevSearchedCities(state.storage, action.payload.weather.name),
       };
     case weatherActionTypes.FETCH_WEATHER_ERROR:
       return {

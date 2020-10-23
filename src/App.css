@@ -8,8 +8,6 @@ font-family: 'Roboto', sans-serif; */
     align-items: center;
     height: 100vh;
     width: 100vw;
-    /* border: 1px solid red; */
-    /* overflow: hidden; */
     background: url('./assets/backgroundImage.jpg') no-repeat;
     background-size: cover;
     background-position: 50% 50%;
@@ -47,5 +45,5 @@ font-family: 'Roboto', sans-serif; */
 }
 
 .logo {
-    width: 50px;
+    width: 40px;
 }

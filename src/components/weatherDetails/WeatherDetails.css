@@ -12,7 +12,8 @@
 
 .tableDiv {
     height: 50%;
-    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
 }
 
 table {

@@ -1,0 +1,23 @@
+.localStorage {
+    display: block;
+    /* width: 10%; */
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    outline: none;
+    margin: 0;
+}
+
+.localContainer {
+    width: 90%;
+    height: 20%;
+    padding: 0;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
