@@ -4,6 +4,7 @@
     max-width: 60%;
     width: 30%;
     font-family: 'Roboto', sans-serif;
+    margin-left: 20px;
 }
 
 .cityName {
@@ -24,4 +25,10 @@
 
 .center {
     margin: auto 0;
+}
+
+@media (min-width: 900px) {
+    .weather__situation {
+        margin: 0;
+    }
 }

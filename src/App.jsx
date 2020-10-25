@@ -1,9 +1,11 @@
+/* eslint-disable operator-linebreak */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable global-require */
 import React, { useEffect } from 'react';
-// import { Blurhash } from 'react-blurhash';
 
 import { useDispatch, useSelector } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+
 import { fetchWeather } from './redux/weather/weatherActions';
 
 import Weather from './components/weather/Weather';
@@ -12,15 +14,15 @@ import Search from './components/search/Search';
 import PrevCities from './components/prevCities/PrevCities';
 
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const storage = useSelector((state) => state.weather.storage);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    storage.length > 0
-      ? dispatch(fetchWeather(storage.pop()))
-      : dispatch(fetchWeather('Athens'));
+    storage && dispatch(fetchWeather(storage.pop()));
   }, [fetchWeather]);
 
   return (
@@ -36,6 +38,19 @@ const App = () => {
           <WeatherDetails />
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      {/* Same as */}
+      <ToastContainer />
     </div>
   );
 };

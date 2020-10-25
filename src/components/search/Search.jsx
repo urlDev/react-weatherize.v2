@@ -1,3 +1,5 @@
+/* eslint-disable operator-linebreak */
+/* eslint-disable no-unused-expressions */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchWeather } from '../../redux/weather/weatherActions';
@@ -16,7 +18,6 @@ const Search = () => {
     e.preventDefault();
 
     dispatch(fetchWeather(input));
-
     setInput('');
   };
 

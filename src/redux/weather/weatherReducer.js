@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 import weatherActionTypes from './weatherActionTypes';
 
 import prevSearchedCities from './weatherUtils';
