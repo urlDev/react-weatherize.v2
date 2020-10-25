@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import { useSelector } from 'react-redux';
+import moment from 'moment';
 
 import './Weather.css';
 
@@ -16,7 +17,7 @@ const Weather = () => {
       </div>
       <div className="center">
         <h1 className="cityName">{weather.name}</h1>
-        <h3 className="date">19.10.2020</h3>
+        <h3 className="date">{moment().format('DD.MM.YYYY')}</h3>
       </div>
       <div className="center">
         {weather.weather && (

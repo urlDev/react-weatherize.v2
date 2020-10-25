@@ -10,7 +10,13 @@ const PrevCities = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="localContainer">
+    <div
+      className={
+        storage.length === 2
+          ? 'localContainer lengthTwo'
+          : 'localContainer lengthMore'
+      }
+    >
       {storage.slice(-3).map((city) => (
         <button
           type="button"
