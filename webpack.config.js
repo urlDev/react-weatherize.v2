@@ -8,7 +8,7 @@ module.exports = (env) => {
   return {
     entry: './src/index.jsx',
     output: {
-      path: path.join(__dirname, 'public'),
+      path: path.join(__dirname, 'build'),
       filename: 'bundle.js',
     },
     module: {
@@ -38,7 +38,7 @@ module.exports = (env) => {
     resolve: { extensions: ['.js', '.jsx'] },
     devtool: isProduction ? 'source-map' : 'eval-cheap-module-source-map',
     devServer: {
-      contentBase: path.join(__dirname, 'public'),
+      contentBase: path.join(__dirname, 'build'),
     },
     plugins: [
       new HtmlWebpackPlugin({

@@ -1,24 +1,23 @@
 .weather__situation {
     display: flex;
     justify-content: space-between;
-    max-width: 60%;
-    width: 30%;
+    margin: 0 auto;
     font-family: 'Roboto', sans-serif;
-    margin-left: 20px;
 }
 
 .cityName {
-    font-size: 40px;
+    font-size: 20px;
     margin-top: 0;
     margin-bottom: 5px;
 }
 
 .date {
     margin: 0;
+    font-size: 15px;
 }
 
 .degree {
-    font-size: 100px;
+    font-size: 50px;
     margin: 0;
     margin-right: 10px;
 }
@@ -30,5 +29,16 @@
 @media (min-width: 900px) {
     .weather__situation {
         margin: 0;
+        max-width: 60%;
+        width: 30%;
+    }
+    .cityName {
+        font-size: 40px;
+    }
+    .degree {
+        font-size: 100px;
+    }
+    .date {
+        font-size: 18px;
     }
 }

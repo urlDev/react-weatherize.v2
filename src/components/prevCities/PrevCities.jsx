@@ -24,6 +24,7 @@ const PrevCities = () => {
           onClick={() => {
             dispatch(fetchWeather(city));
           }}
+          key={city}
         >
           {city}
         </button>
