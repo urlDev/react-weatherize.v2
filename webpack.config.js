@@ -1,5 +1,6 @@
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env) => {
   const isProduction = env === 'production';
@@ -39,7 +40,12 @@ module.exports = (env) => {
     devServer: {
       contentBase: path.join(__dirname, 'public'),
     },
-    plugins: [new Dotenv()],
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: path.resolve('./public/index.html'),
+      }),
+      new Dotenv(),
+    ],
     target: 'web',
     stats: 'errors-warnings',
   };
