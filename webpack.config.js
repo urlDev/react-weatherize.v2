@@ -9,6 +9,7 @@ module.exports = (env) => {
     entry: './src/index.jsx',
     output: {
       path: path.join(__dirname, 'build'),
+      publicPath: '/',
       filename: 'bundle.js',
     },
     module: {
@@ -38,11 +39,12 @@ module.exports = (env) => {
     resolve: { extensions: ['.js', '.jsx'] },
     devtool: isProduction ? 'source-map' : 'eval-cheap-module-source-map',
     devServer: {
-      contentBase: path.join(__dirname, 'build'),
+      contentBase: './build',
     },
     plugins: [
       new HtmlWebpackPlugin({
         template: path.resolve('./public/index.html'),
+        favicon: './public/logo.svg',
       }),
       new Dotenv(),
     ],

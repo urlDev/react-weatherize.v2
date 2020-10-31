@@ -1,5 +1,6 @@
 /* eslint-disable indent */
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 export const fetchWeatherBegin = () => ({
   type: 'FETCH_WEATHER_BEGIN',
@@ -15,23 +16,19 @@ export const fetchWeatherError = (error) => ({
   payload: { error },
 });
 
-// export const saveLocalStorage = (storage) => ({
-//   type: 'SAVE_LOCAL_STORAGE',
-//   payload: { storage },
-// });
-
 export const fetchWeather = (input = 'Helsinki') => async (dispatch) => {
   dispatch(fetchWeatherBegin());
   try {
-    const response = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=${process.env.WEATHER_API}&units=metric`,
+    const response = await axios.get(
+      `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=${process.env.WEATHER_API}&units=metric`,
     );
-    const data = await response.json();
+    const data = await response.data;
     return data.cod === 200
       ? dispatch(fetchWeatherSuccess(data))
       : [
           toast.error(
-            data.message.slice(0, 1).toUpperCase() + data.message.slice(1),
+            data.message &&
+              data.message.slice(0, 1).toUpperCase() + data.message.slice(1),
           ),
           dispatch(fetchWeatherError(data.message)),
         ];

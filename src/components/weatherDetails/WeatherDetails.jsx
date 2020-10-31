@@ -26,7 +26,7 @@ const WeatherDetails = () => {
           </tr>
         </table>
       </div>
-    </div> //
+    </div>
   );
 };
 
