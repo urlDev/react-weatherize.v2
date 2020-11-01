@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 /* eslint-disable indent */
 import { toast } from 'react-toastify';
 import axios from 'axios';
@@ -23,14 +24,15 @@ export const fetchWeather = (input = 'Helsinki') => async (dispatch) => {
       `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=${process.env.WEATHER_API}&units=metric`,
     );
     const data = await response.data;
-    return data.cod === 200
+    return data && data.cod === 200
       ? dispatch(fetchWeatherSuccess(data))
       : [
           toast.error(
-            data.message &&
-              data.message.slice(0, 1).toUpperCase() + data.message.slice(1),
+            data.message
+              ? data.message.slice(0, 1).toUpperCase() + data.message.slice(1)
+              : 'City not found',
           ),
-          dispatch(fetchWeatherError(data.message)),
+          dispatch(fetchWeatherError(data && data.message)),
         ];
   } catch (error) {
     return dispatch(fetchWeatherError(error));
