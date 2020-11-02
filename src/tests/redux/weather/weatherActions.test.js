@@ -1,5 +1,7 @@
 import moxios from 'moxios';
-import toast from 'react-toastify';
+
+// will add test for toastify
+// import toast from 'react-toastify';
 
 import { store } from '../../__mocks__/store';
 import {
@@ -9,7 +11,7 @@ import {
   fetchWeather,
 } from '../../../redux/weather/weatherActions';
 import { weatherDefault, weather, weatherError } from '../../fixtures/weather';
-import error from '../../fixtures/error';
+import error, { errorConnection } from '../../fixtures/error';
 
 test('Should start fetching weather data', () => {
   const action = fetchWeatherBegin();
@@ -64,12 +66,11 @@ describe('Mocking fetchWeather and API calls', () => {
       },
     ];
 
-    return store.dispatch(fetchWeather()).then(() => {
+    return store.dispatch(fetchWeather('Athens')).then(() => {
       const actionsGetCalled = store.getActions();
 
       expect(actionsGetCalled).toEqual(expectedActions);
       expect(actionsGetCalled[1].payload).toEqual(expectedActions[1].payload);
-      // console.log(actionsGetCalled);
     });
   });
 
@@ -112,29 +113,40 @@ describe('Mocking fetchWeather and API calls', () => {
 
     const expectedActions = [
       { type: 'FETCH_WEATHER_BEGIN' },
-      { type: 'FETCH_WEATHER_ERROR', payload: error },
+      { type: 'FETCH_WEATHER_ERROR', payload: weatherError },
+    ];
+
+    return store.dispatch(fetchWeather('Lost Angeles')).then(() => {
+      const actionsGetCalled = store.getActions();
+
+      expect(actionsGetCalled[5].payload.error).toEqual(
+        expectedActions[1].payload.message,
+      );
+    });
+  });
+
+  test('Should not fetch weather if there is no connection', () => {
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+      request.respondWith({
+        status: 404,
+        response: errorConnection,
+      });
+    });
+    const expectedActions = [
+      { type: 'FETCH_WEATHER_BEGIN' },
+      {
+        type: 'FETCH_WEATHER_ERROR',
+        payload: errorConnection,
+      },
     ];
 
     return store.dispatch(fetchWeather()).then(() => {
       const actionsGetCalled = store.getActions();
 
-      expect(actionsGetCalled[5].payload).toEqual(expectedActions[1].payload);
-    });
-  });
-
-  test('Should open toaster and show the error message', () => {
-    moxios.wait(() => {
-      const request = moxios.requests.mostRecent();
-      request.respondWith({
-        status: 200,
-        response: weatherError,
-      });
-    });
-
-    return store.dispatch(fetchWeather()).then(() => {
-      const actionsCalled = store.getActions();
-
-      console.log(toast, actionsCalled);
+      expect(actionsGetCalled[7].payload.error.response.data).toEqual(
+        expectedActions[1].payload,
+      );
     });
   });
 });

@@ -21,7 +21,7 @@ const weatherReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        weather: action.payload.weather,
+        weather: action.payload || action.payload.weather,
         storage: prevSearchedCities(state.storage, action.payload.weather.name),
       };
     case weatherActionTypes.FETCH_WEATHER_ERROR:
