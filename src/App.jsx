@@ -1,7 +1,7 @@
 /* eslint-disable operator-linebreak */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable global-require */
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
@@ -21,7 +21,7 @@ const App = () => {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  React.useEffect(() => {
     storage && dispatch(fetchWeather(storage.pop()));
   }, [fetchWeather]);
 

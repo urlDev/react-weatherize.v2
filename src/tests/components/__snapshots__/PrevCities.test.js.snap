@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Previous Cities component Should render previous cities correctly after searching for more than one city 1`] = `undefined`;
+
+exports[`Previous Cities component Should render previous cities on mount correctly 1`] = `undefined`;

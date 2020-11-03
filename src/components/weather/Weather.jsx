@@ -12,17 +12,17 @@ const Weather = () => {
     <div className="weather__situation">
       <div className="center">
         <h1 className="degree">
-          {weather.main && parseInt(weather.main.temp, 10)}°
+          {weather.weather.main && parseInt(weather.weather.main.temp, 10)}°
         </h1>
       </div>
       <div className="center">
-        <h1 className="cityName">{weather.name}</h1>
+        <h1 className="cityName">{weather.weather.name}</h1>
         <h3 className="date">{moment().format('DD.MM.YYYY')}</h3>
       </div>
       <div className="center">
         {weather.weather && (
           <img
-            src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+            src={`https://openweathermap.org/img/wn/${weather.weather.weather[0].icon}@2x.png`}
             alt=""
           />
         )}
