@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search component Should render form with input value 1`] = `
+<div
+  className="search"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      className="input"
+      onChange={[Function]}
+      placeholder="Previous cities"
+      required={true}
+      type="text"
+      value="Helsinki"
+    />
+    <button
+      type="submit"
+    >
+      <img
+        alt="search magnifier"
+        src={Object {}}
+      />
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Search component Should render the component correctly 1`] = `
+<div
+  className="search"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      className="input"
+      onChange={[Function]}
+      placeholder="Previous cities"
+      required={true}
+      type="text"
+      value=""
+    />
+    <button
+      type="submit"
+    >
+      <img
+        alt="search magnifier"
+        src={Object {}}
+      />
+    </button>
+  </form>
+</div>
+`;

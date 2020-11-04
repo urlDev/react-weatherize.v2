@@ -1,13 +1,13 @@
 /* eslint-disable operator-linebreak */
 /* eslint-disable no-unused-expressions */
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import { useDispatch } from '../../tests/__mocks__/reactReduxHooks';
 import { fetchWeather } from '../../redux/weather/weatherActions';
 
 import './Search.css';
 
 const Search = () => {
-  const [input, setInput] = useState('');
+  const [input, setInput] = React.useState('');
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
