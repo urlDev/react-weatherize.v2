@@ -11,6 +11,7 @@ import {
   fetchWeather,
 } from '../../../redux/weather/weatherActions';
 import { weatherDefault, weather, weatherError } from '../../fixtures/weather';
+// eslint-disable-next-line import/no-named-as-default
 import error, { errorConnection } from '../../fixtures/error';
 
 test('Should start fetching weather data', () => {

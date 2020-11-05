@@ -2,7 +2,7 @@
 
 exports[`Weather component Should render the component correctly 1`] = `
 <div
-  className="weather__situation"
+  className="weatherSituation"
 >
   <div
     className="center"
@@ -25,7 +25,7 @@ exports[`Weather component Should render the component correctly 1`] = `
     <h3
       className="date"
     >
-      04.11.2020
+      05.11.2020
     </h3>
   </div>
   <div

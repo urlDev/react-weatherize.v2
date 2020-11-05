@@ -1,4 +1,4 @@
-.weather__situation {
+.weatherSituation {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -27,7 +27,7 @@
 }
 
 @media (min-width: 900px) {
-    .weather__situation {
+    .weatherSituation {
         margin: 0;
         max-width: 60%;
         width: 30%;

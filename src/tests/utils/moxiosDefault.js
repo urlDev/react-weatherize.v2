@@ -2,12 +2,12 @@ import moxios from 'moxios';
 import { store } from '../__mocks__/store';
 import { fetchWeather } from '../../redux/weather/weatherActions';
 
-const moxiosDefault = async (payload, fetch, bool, num, done) => {
+const moxiosDefault = async (payload, fetch, bool, num) => {
   moxios.wait(() => {
     const request = moxios.requests.mostRecent();
     request.respondWith({
       status: 200,
-      response: payload,
+      response: { payload },
     });
   });
 
@@ -15,7 +15,7 @@ const moxiosDefault = async (payload, fetch, bool, num, done) => {
     { type: 'FETCH_WEATHER_BEGIN' },
     {
       type: fetch,
-      payload: { payload },
+      payload,
     },
   ];
 

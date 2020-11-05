@@ -2,45 +2,45 @@
 
 exports[`Weather details component Should render the component correctly 1`] = `
 <div
-  className="weather__details"
+  className="weatherDetails"
 >
   <h1
     className="tableHeader"
   >
     Weather Details
   </h1>
-  <div
+  <table
     className="tableDiv"
   >
-    <table>
+    <tbody>
       <tr>
-        <th>
+        <td>
           Visibility
-        </th>
-        <th>
+        </td>
+        <td>
           10
           .0 km
-        </th>
+        </td>
       </tr>
       <tr>
-        <th>
+        <td>
           Humidity
-        </th>
-        <th>
+        </td>
+        <td>
           35
           %
-        </th>
+        </td>
       </tr>
       <tr>
-        <th>
+        <td>
           Wind
-        </th>
-        <th>
+        </td>
+        <td>
           4.1
            km/h
-        </th>
+        </td>
       </tr>
-    </table>
-  </div>
+    </tbody>
+  </table>
 </div>
 `;

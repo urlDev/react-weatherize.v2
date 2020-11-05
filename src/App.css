@@ -35,7 +35,7 @@ font-family: 'Roboto', sans-serif; */
     -webkit-backdrop-filter: blur(30px);
 }
 
-.right__inner {
+.rightInner {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,6 +45,8 @@ font-family: 'Roboto', sans-serif; */
 
 .logo {
     width: 40px;
+    margin-left: 10%;
+    margin-top: 5vh;
 }
 
 @media (min-width: 900px) {
@@ -57,11 +59,14 @@ font-family: 'Roboto', sans-serif; */
         padding: 0;
         padding-left: 100px;
     }
+    .logo {
+        margin: 0;
+    }
     .right {
         height: 100%;
         width: 40%;
     }
-    .right__inner {
+    .rightInner {
         height: 80%;
     }
 }

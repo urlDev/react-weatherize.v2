@@ -35,6 +35,6 @@ export const fetchWeather = (input = 'Helsinki') => async (dispatch) => {
           dispatch(fetchWeatherError(data && data.message)),
         ];
   } catch (error) {
-    return dispatch(fetchWeatherError(error));
+    return [dispatch(fetchWeatherError(error)), toast.error(error.message)];
   }
 };

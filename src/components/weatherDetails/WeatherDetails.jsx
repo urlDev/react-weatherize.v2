@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import { useSelector } from '../../tests/__mocks__/reactReduxHooks';
@@ -8,24 +9,32 @@ const WeatherDetails = () => {
   const weather = useSelector((state) => state.weather.weather);
 
   return (
-    <div className="weather__details">
+    <div className="weatherDetails">
       <h1 className="tableHeader">Weather Details</h1>
-      <div className="tableDiv">
-        <table>
+      <table className="tableDiv">
+        <tbody>
           <tr>
-            <th>Visibility</th>
-            <th>{parseInt(weather.weather.visibility, 10) / 1000}.0 km</th>
+            <td>Visibility</td>
+            <td>
+              {weather.weather &&
+                parseInt((weather.weather || weather).visibility, 10) / 1000}
+              .0 km
+            </td>
           </tr>
           <tr>
-            <th>Humidity</th>
-            <th>{weather.weather.main.humidity}%</th>
+            <td>Humidity</td>
+            <td>
+              {weather.weather && (weather.weather || weather).main.humidity}%
+            </td>
           </tr>
           <tr>
-            <th>Wind</th>
-            <th>{weather.weather.wind.speed} km/h</th>
+            <td>Wind</td>
+            <td>
+              {weather.weather && (weather.weather || weather).wind.speed} km/h
+            </td>
           </tr>
-        </table>
-      </div>
+        </tbody>
+      </table>
     </div>
   );
 };

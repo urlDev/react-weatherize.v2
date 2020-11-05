@@ -32,7 +32,7 @@ const App = () => {
         <Weather />
       </div>
       <div className="right">
-        <div className="right__inner">
+        <div className="rightInner">
           <Search />
           <PrevCities />
           <WeatherDetails />

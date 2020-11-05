@@ -1,14 +1,18 @@
-.weather__details {
+.weatherDetails {
     color: white;
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
     width: 90%;
-    height: 50%;
+    height: 40%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-left: auto;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+}
+
+.tableHeader {
+    font-weight: 100;
 }
 
 .tableDiv {
@@ -18,16 +22,13 @@
 }
 
 table {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     width: 100%;
     height: 100%;
-    /* margin-left: 10%; */
 }
 
 @media (min-width: 900px) {
-    .weather__details {
+    .weatherDetails {
         margin-bottom: 0;
+        height: 30%;
     }
 }
