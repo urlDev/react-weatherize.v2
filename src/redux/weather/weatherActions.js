@@ -1,5 +1,3 @@
-/* eslint-disable operator-linebreak */
-/* eslint-disable indent */
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
@@ -21,10 +19,10 @@ export const fetchWeather = (input = 'Helsinki') => async (dispatch) => {
   dispatch(fetchWeatherBegin());
   try {
     const response = await axios.get(
-      `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=${process.env.WEATHER_API}&units=metric`,
+      `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=${process.env.REACT_APP_WEATHER_API}&units=metric`,
     );
     const data = await response.data;
-    return data && data.cod === 200
+    return data && data.weather.cod === 200
       ? dispatch(fetchWeatherSuccess(data))
       : [
           toast.error(

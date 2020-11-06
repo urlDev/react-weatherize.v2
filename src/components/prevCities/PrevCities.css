@@ -14,7 +14,7 @@
     width: 80%;
     height: 20%;
     padding: 0;
-    margin: 20px auto 30px auto;
+    margin: 60px auto 30px auto;
 }
 
 .lengthTwo button {
@@ -27,8 +27,14 @@
     flex-direction: column;
 }
 
-@media (min-width: 900px) {
+@media only screen and (min-width: 900px) {
     .localContainer {
         margin-top: 10px;
+    }
+}
+
+@media (min-width: 800px) and (min-height: 800px) {
+    .localContainer {
+        margin-top: -20vh;
     }
 }

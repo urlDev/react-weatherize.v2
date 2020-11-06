@@ -16,17 +16,18 @@ const WeatherDetails = () => {
           <tr>
             <td>Visibility</td>
             <td>
-              {parseInt(weather.weather.visibility, 10) / 1000}
+              {weather &&
+                parseInt((weather.weather || weather).visibility, 10) / 1000}
               .0 km
             </td>
           </tr>
           <tr>
             <td>Humidity</td>
-            <td>{weather && weather.weather.main.humidity}%</td>
+            <td>{weather && (weather.weather || weather).main.humidity}%</td>
           </tr>
           <tr>
             <td>Wind</td>
-            <td>{weather.weather.wind.speed} km/h</td>
+            <td>{weather && (weather.weather || weather).wind.speed} km/h</td>
           </tr>
         </tbody>
       </table>

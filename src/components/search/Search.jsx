@@ -1,8 +1,8 @@
-/* eslint-disable operator-linebreak */
-/* eslint-disable no-unused-expressions */
 import React from 'react';
 import { useDispatch } from '../../tests/__mocks__/reactReduxHooks';
 import { fetchWeather } from '../../redux/weather/weatherActions';
+
+import Magnifier from '../../assets/search.svg';
 
 import './Search.css';
 
@@ -33,11 +33,7 @@ const Search = () => {
           required
         />
         <button type="submit">
-          <img
-            // eslint-disable-next-line global-require
-            src={require('../../assets/search.svg')}
-            alt="search magnifier"
-          />
+          <img src={Magnifier} alt="search magnifier" />
         </button>
       </form>
     </div>

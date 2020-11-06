@@ -1,6 +1,3 @@
-/* eslint-disable operator-linebreak */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable global-require */
 import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,23 +9,26 @@ import Weather from './components/weather/Weather';
 import WeatherDetails from './components/weatherDetails/WeatherDetails';
 import Search from './components/search/Search';
 import PrevCities from './components/prevCities/PrevCities';
+import logo from './assets/logo.png';
 
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   const storage = useSelector((state) => state.weather.storage);
-
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    storage && dispatch(fetchWeather(storage.pop()));
-  }, [fetchWeather]);
+    const last = storage.slice(-1);
+    if (storage) {
+      dispatch(fetchWeather(last));
+    }
+  }, [dispatch, storage]);
 
   return (
     <div className="container">
       <div className="left">
-        <img className="logo" src={require('./assets/logo.png')} alt="" />
+        <img className="logo" src={logo} alt="" />
         <Weather />
       </div>
       <div className="right">
@@ -49,8 +49,6 @@ const App = () => {
         draggable
         pauseOnHover
       />
-      {/* Same as */}
-      <ToastContainer />
     </div>
   );
 };

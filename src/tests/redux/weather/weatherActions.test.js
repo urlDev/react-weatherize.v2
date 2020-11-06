@@ -1,8 +1,5 @@
 import moxios from 'moxios';
 
-// will add test for toastify
-// import toast from 'react-toastify';
-
 import { store } from '../../__mocks__/store';
 import {
   fetchWeatherBegin,
@@ -11,7 +8,7 @@ import {
   fetchWeather,
 } from '../../../redux/weather/weatherActions';
 import { weatherDefault, weather, weatherError } from '../../fixtures/weather';
-// eslint-disable-next-line import/no-named-as-default
+
 import error, { errorConnection } from '../../fixtures/error';
 
 test('Should start fetching weather data', () => {
