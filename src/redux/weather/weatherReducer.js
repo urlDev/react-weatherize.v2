@@ -4,7 +4,7 @@ import weatherActionTypes from './weatherActionTypes';
 import prevSearchedCities from './weatherUtils';
 
 const initialState = {
-  loading: false,
+  loading: true,
   weather: [],
   error: null,
   storage: [],

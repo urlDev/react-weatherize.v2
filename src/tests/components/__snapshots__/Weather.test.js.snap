@@ -4,37 +4,10 @@ exports[`Weather component Should render the component correctly 1`] = `
 <div
   className="weatherSituation"
 >
-  <div
-    className="center"
-  >
-    <h1
-      className="degree"
-    >
-      20
-      °
-    </h1>
-  </div>
-  <div
-    className="center"
-  >
-    <h1
-      className="cityName"
-    >
-      Athens
-    </h1>
-    <h3
-      className="date"
-    >
-      06.11.2020
-    </h3>
-  </div>
-  <div
-    className="center"
-  >
-    <img
-      alt=""
-      src="https://openweathermap.org/img/wn/02d@2x.png"
-    />
-  </div>
+  <img
+    alt="logo"
+    className="loading"
+    src="logo.png"
+  />
 </div>
 `;

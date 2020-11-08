@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 
 import { fetchWeather } from './redux/weather/weatherActions';
@@ -15,15 +15,11 @@ import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
-  const storage = useSelector((state) => state.weather.storage);
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    const last = storage.slice(-1);
-    if (storage) {
-      dispatch(fetchWeather(last));
-    }
-  }, [dispatch, storage]);
+    dispatch(fetchWeather());
+  }, [dispatch]);
 
   return (
     <div className="container">

@@ -26,6 +26,26 @@
     margin: auto 0;
 }
 
+.loading {
+    margin: auto;
+    width: 30px;
+    animation: loading 1s infinite ease-in-out;
+}
+
+@keyframes loading {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0.75;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
 @media (min-width: 900px) {
     .weatherSituation {
         margin: 0;

@@ -22,17 +22,14 @@ export const fetchWeather = (input = 'Helsinki') => async (dispatch) => {
       `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=${process.env.REACT_APP_WEATHER_API}&units=metric`,
     );
     const data = await response.data;
-    return data && data.weather.cod === 200
-      ? dispatch(fetchWeatherSuccess(data))
-      : [
-          toast.error(
-            data.message
-              ? data.message.slice(0, 1).toUpperCase() + data.message.slice(1)
-              : 'City not found',
-          ),
-          dispatch(fetchWeatherError(data && data.message)),
-        ];
+    return dispatch(fetchWeatherSuccess(data));
   } catch (error) {
-    return [dispatch(fetchWeatherError(error)), toast.error(error.message)];
+    return [
+      dispatch(fetchWeatherError(error)),
+      toast.error(
+        error.response.data.message.slice(0, 1).toUpperCase() +
+          error.response.data.message.slice(1),
+      ),
+    ];
   }
 };
